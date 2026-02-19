@@ -174,10 +174,15 @@ const techFilters = $("#techFilters");
 let allProjects = [];
 let activeTech = "all";
 let searchText = "";
-
 function uniqueTechs(projects) {
   const set = new Set();
-  projects.forEach((p) => (p.tech || []).forEach((t) => set.add(t)));
+
+  projects.forEach((p) =>
+    (p.filter || []).forEach((t) => {
+      set.add(t);
+    }),
+  );
+
   return Array.from(set).sort((a, b) => a.localeCompare(b));
 }
 
@@ -210,11 +215,15 @@ function renderTechFilters(projects) {
 }
 
 function matchProject(p) {
-  const byTech = activeTech === "all" || (p.tech || []).includes(activeTech);
+  const byTech = activeTech === "all" || (p.filter || []).includes(activeTech);
+
   const q = searchText.trim().toLowerCase();
+
   const hay =
-    `${p.title} ${p.subtitle} ${p.problem} ${p.solution} ${(p.tech || []).join(" ")}`.toLowerCase();
+    `${p.title} ${p.subtitle} ${p.problem} ${p.solution} ${(p.stack || []).join(" ")}`.toLowerCase();
+
   const bySearch = !q || hay.includes(q);
+
   return byTech && bySearch;
 }
 
@@ -236,11 +245,12 @@ function renderProjects() {
       </div>
       <div class="project-desc">${p.subtitle || ""}</div>
       <div class="project-tags">
-        ${(p.tech || [])
-          .slice(0, 6)
-          .map((t) => `<span class="tag">${t}</span>`)
-          .join("")}
-      </div>
+  ${(p.stack || [])
+    .slice(0, 6)
+    .map((t) => `<span class="tag">${t}</span>`)
+    .join("")}
+</div>
+
     </article>
   `,
     )
@@ -279,7 +289,8 @@ function openProjectModal(project) {
     <div class="preview-info">
       <div class="info-chip"><span>Problema</span>${project.problem || "—"}</div>
       <div class="info-chip"><span>Solução / Utilidade</span>${project.solution || "—"}</div>
-      <div class="info-chip"><span>Tecnologias</span>${(project.tech || []).join(", ") || "—"}</div>
+      <div class="info-chip"><span>Tecnologias</span>${(project.stack || []).join(", ") || "—"}</div>
+
       <div class="info-chip"><span>Destaques</span>${(project.highlights || []).slice(0, 3).join(" • ") || "—"}</div>
     </div>
 

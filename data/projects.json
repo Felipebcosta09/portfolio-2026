@@ -1,31 +1,217 @@
 [
   {
     "id": 1,
-    "title": "Dev Imports (E-commerce)",
-    "subtitle": "Catálogo, carrinho e fluxo de pedido com UI organizada.",
-    "badge": "Destaque",
-    "problem": "Precisava organizar produtos e permitir pedidos com experiência fluida.",
-    "solution": "Criei vitrine com cards, carrinho persistente e ações claras para compra.",
-    "tech": ["HTML", "CSS", "JavaScript", "Firebase"],
-    "highlights": ["Carrinho", "Filtros", "Admin (Firebase)"],
-    "cover": "assets/projects/devimports.jpg",
+    "title": "Tete Bolos",
+    "subtitle": "Site institucional para confeitaria com layout visual forte.",
+    "badge": "Cliente",
+    "problem": "Negócio precisava de presença digital para apresentar produtos e facilitar pedidos.",
+    "solution": "Desenvolvimento de site responsivo com carrossel, seção de cardápio e foco visual nos produtos.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Carrossel personalizado",
+      "Layout visual forte",
+      "Responsividade",
+      "Seção de cardápio dinâmica"
+    ],
+    "cover": "assets/projetos/tetebolos.jpg",
     "links": [
-      { "label": "🔗 Demo", "url": "#", "primary": true },
-      { "label": "💻 GitHub", "url": "#", "primary": false }
+      {
+        "label": "🌐 Ver site",
+        "url": "https://tetebolos.netlify.app/",
+        "primary": true
+      }
     ]
   },
   {
     "id": 2,
-    "title": "VV Group (Site corporativo)",
-    "subtitle": "Landing corporativa com foco em conversão e layout profissional.",
-    "badge": "",
-    "problem": "Apresentar serviços e converter leads com clareza e credibilidade.",
-    "solution": "Estruturei seções, hierarquia visual e CTAs para orientar o usuário.",
-    "tech": ["HTML", "CSS", "JavaScript"],
-    "highlights": ["SEO básico", "Seções", "CTA"],
-    "cover": "assets/projects/vvgroup.jpg",
+    "title": "VV Group",
+    "subtitle": "Landing corporativa com foco em autoridade e conversão.",
+    "badge": "Cliente",
+    "problem": "Empresa precisava apresentar serviços estratégicos com credibilidade.",
+    "solution": "Estruturação de seções com hierarquia visual forte e CTAs orientados à conversão.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Hierarquia visual",
+      "Layout corporativo",
+      "CTAs estratégicos",
+      "Responsividade"
+    ],
+    "cover": "assets/projetos/vvgroup.jpg",
     "links": [
-      { "label": "🔗 Demo", "url": "#", "primary": true }
+      {
+        "label": "🌐 Ver site",
+        "url": "https://vv-group.netlify.app/",
+        "primary": true
+      }
     ]
+  },
+  {
+    "id": 3,
+    "title": "AUCTA Automações",
+    "subtitle": "Landing moderna para serviços de automação e soluções digitais.",
+    "badge": "Marca própria",
+    "problem": "Criar presença digital profissional para oferta de soluções tecnológicas.",
+    "solution": "Desenvolvimento de layout moderno com foco em autoridade e apresentação clara de serviços.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Design moderno",
+      "Estrutura para conversão",
+      "Deploy em produção",
+      "Layout estratégico"
+    ],
+    "cover": "assets/projetos/aucta-automacoes.jpg",
+    "links": [
+      {
+        "label": "🌐 Ver site",
+        "url": "https://aucta-automacoes.netlify.app/",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "VV Studios",
+    "subtitle": "Site institucional para estúdio com foco visual e apresentação de serviços.",
+    "badge": "Cliente",
+    "problem": "Estúdio precisava de presença digital elegante e organizada.",
+    "solution": "Criação de layout com foco visual, seções bem definidas e animações suaves.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Animações suaves",
+      "Layout elegante",
+      "Seções organizadas",
+      "Responsividade"
+    ],
+    "cover": "assets/projetos/vvstudios.jpg",
+    "links": [
+      {
+        "label": "🌐 Ver site",
+        "url": "https://vvstudios.netlify.app/",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "AUCTA (Site Oficial)",
+    "subtitle": "Site oficial da marca AUCTA com foco em serviços digitais.",
+    "badge": "Produção",
+    "problem": "Consolidar identidade digital e apresentar serviços profissionais.",
+    "solution": "Desenvolvimento de site institucional moderno com identidade visual própria.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Identidade visual forte",
+      "Deploy com domínio próprio",
+      "Estrutura profissional"
+    ],
+    "cover": "assets/projetos/aucta.jpg",
+    "links": [
+      { "label": "🌐 Ver site", "url": "https://aucta.pt/", "primary": true }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Agenda COR",
+    "subtitle": "Painel com integração de agenda e organização visual.",
+    "badge": "Projeto técnico",
+    "problem": "Organizar agenda pública com visual claro e dados estruturados.",
+    "solution": "Criação de painel responsivo com integração de agenda e organização por seções.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Integração externa",
+      "Layout em grid",
+      "Atualização dinâmica",
+      "Responsividade"
+    ],
+    "cover": "assets/projetos/agenda-cor.jpg",
+    "links": [
+      {
+        "label": "🌐 Ver site",
+        "url": "https://agenda-cor.netlify.app/",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Barbearia (Em desenvolvimento)",
+    "subtitle": "Landing para serviços locais com foco em agendamento.",
+    "badge": "Em breve",
+    "problem": "Negócio local precisava modernizar presença digital.",
+    "solution": "Projeto em desenvolvimento com foco em agendamento online.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Agendamento online",
+      "Layout moderno",
+      "Experiência intuitiva"
+    ],
+    "cover": "assets/projetos/barbearia.jpg",
+    "links": [
+      {
+        "label": "🌐 Ver site",
+        "url": "ADICIONAR LINK DO SITE AQUI",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Imobiliária (Em desenvolvimento)",
+    "subtitle": "Plataforma para apresentação e organização de imóveis.",
+    "badge": "Em breve",
+    "problem": "Necessidade de organizar imóveis com filtros e visual profissional.",
+    "solution": "Projeto com sistema de listagem, filtros e detalhamento.",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "filter": ["JavaScript"],
+    "highlights": [
+      "Sistema de filtros",
+      "Cards dinâmicos",
+      "Estrutura escalável"
+    ],
+    "cover": "assets/projetos/imobiliaria.jpg",
+    "links": [
+      {
+        "label": "🌐 Ver site",
+        "url": "ADICIONAR LINK DO SITE AQUI",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Sistema Backend PHP (Teste)",
+    "subtitle": "Projeto teste para validar filtro por linguagem PHP.",
+    "badge": "Teste",
+    "problem": "Validar funcionamento do sistema de filtros por linguagem.",
+    "solution": "Projeto fictício apenas para teste visual no portfólio.",
+    "stack": ["HTML", "CSS", "PHP", "MySQL"],
+    "filter": ["PHP"],
+    "highlights": ["Backend simulado", "Estrutura MVC", "Integração com banco"],
+    "cover": "assets/projetos/php-teste.jpg",
+    "links": []
+  },
+  {
+    "id": 10,
+    "title": "API Python Flask (Teste)",
+    "subtitle": "Projeto teste para validar filtro por linguagem Python.",
+    "badge": "Teste",
+    "problem": "Testar exibição automática de nova linguagem no filtro.",
+    "solution": "Projeto fictício para simular backend em Python.",
+    "stack": ["HTML", "CSS", "Python", "Flask"],
+    "filter": ["Python"],
+    "highlights": [
+      "API REST simulada",
+      "Estrutura Flask",
+      "Organização backend"
+    ],
+    "cover": "assets/projetos/python-teste.jpg",
+    "links": []
   }
 ]
