@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "title": "Dev Imports (E-commerce)",
+    "subtitle": "Catálogo, carrinho e fluxo de pedido com UI organizada.",
+    "badge": "Destaque",
+    "problem": "Precisava organizar produtos e permitir pedidos com experiência fluida.",
+    "solution": "Criei vitrine com cards, carrinho persistente e ações claras para compra.",
+    "tech": ["HTML", "CSS", "JavaScript", "Firebase"],
+    "highlights": ["Carrinho", "Filtros", "Admin (Firebase)"],
+    "cover": "assets/projects/devimports.jpg",
+    "links": [
+      { "label": "🔗 Demo", "url": "#", "primary": true },
+      { "label": "💻 GitHub", "url": "#", "primary": false }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "VV Group (Site corporativo)",
+    "subtitle": "Landing corporativa com foco em conversão e layout profissional.",
+    "badge": "",
+    "problem": "Apresentar serviços e converter leads com clareza e credibilidade.",
+    "solution": "Estruturei seções, hierarquia visual e CTAs para orientar o usuário.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "highlights": ["SEO básico", "Seções", "CTA"],
+    "cover": "assets/projects/vvgroup.jpg",
+    "links": [
+      { "label": "🔗 Demo", "url": "#", "primary": true }
+    ]
+  }
+]

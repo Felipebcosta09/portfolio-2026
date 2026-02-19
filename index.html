@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfólio | Felipe</title>
+    <meta
+      name="description"
+      content="Portfólio interativo com formações, certificados e projetos."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a class="brand" href="#home">Felipe<span>.</span></a>
+
+        <nav class="nav">
+          <a href="#sobre" data-i18n="nav_about">Sobre</a>
+          <a href="#formacoes" data-i18n="nav_edu">Formações</a>
+          <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+          <a href="#contato" data-i18n="nav_contact">Contato</a>
+        </nav>
+
+        <div class="topbar-actions">
+          <button
+            class="btn ghost"
+            id="langToggle"
+            type="button"
+            aria-label="Alternar idioma"
+          >
+            PT/EN
+          </button>
+          <button
+            class="btn ghost"
+            id="themeToggle"
+            type="button"
+            aria-label="Alternar tema"
+          >
+            🌙/☀️
+          </button>
+          <a class="btn primary" href="#projetos">Ver Projetos</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-left">
+            <p class="kicker" data-i18n="kicker">Portfólio Interativo</p>
+
+            <h1 data-i18n="hero_title">
+              Dev focado em UI/UX, boas práticas e projetos que resolvem
+              problemas reais.
+            </h1>
+
+            <p class="sub" data-i18n="hero_sub">
+              Formação, pós, cursos e projetos com descrição de utilidade +
+              tecnologias utilizadas.
+            </p>
+
+            <div class="chips">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">SQL</span>
+              <span class="chip">AWS</span>
+              <span class="chip">Node</span>
+              <span class="chip">Firebase</span>
+            </div>
+
+            <div class="hero-cta">
+              <a
+                class="btn primary"
+                href="#projetos"
+                data-i18n="hero_btn_projects"
+                >🚀 Projetos</a
+              >
+              <a class="btn" href="#formacoes" data-i18n="hero_btn_certs"
+                >🎓 Certificados</a
+              >
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <div class="hero-card">
+              <h3 data-i18n="hero_card_title">O que você encontra aqui</h3>
+              <ul>
+                <li data-i18n="hero_li_1">
+                  ✅ Formações com certificados (visualização)
+                </li>
+                <li data-i18n="hero_li_2">
+                  ✅ Projetos com utilidade + stack + links
+                </li>
+                <li data-i18n="hero_li_3">✅ Filtros por tecnologia e busca</li>
+                <li data-i18n="hero_li_4">
+                  ✅ UI/UX limpa, responsiva e rápida
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+      <section id="sobre" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 data-i18n="about_title">Sobre</h2>
+            <p data-i18n="about_sub">
+              Resumo curto e objetivo (aqui você escreve 4–6 linhas).
+            </p>
+          </div>
+
+          <div class="stats">
+            <span class="stat-label" data-i18n="stat_projects">Projetos</span>
+            <span class="stat-label" data-i18n="stat_certs"
+              >Cursos/Certificados</span
+            >
+            <span class="stat-label" data-i18n="stat_focus">Stacks foco</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMAÇÕES (Split View) -->
+      <section id="formacoes" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 data-i18n="edu_title">Formações & Certificados</h2>
+            <p data-i18n="edu_sub">
+              Clique em um item para ver o certificado no painel.
+            </p>
+          </div>
+
+          <div class="formacao-header">
+            <div class="title-area">
+              <h3 data-i18n="edu_library">Biblioteca de Certificados</h3>
+              <p class="muted" data-i18n="edu_library_sub">
+                Separado por categoria para ficar “cara de painel”.
+              </p>
+              <span class="counter-label" data-i18n="edu_counter"
+                >certificados</span
+              >
+            </div>
+
+            <div class="counter-area">
+              <div class="counter-box">
+                <span class="counter-number" id="certCounter">0</span>
+                <span class="counter-label">certificados</span>
+              </div>
+            </div>
+          </div>
+
+          <nav class="tabs" aria-label="Categorias de formação">
+            <button
+              class="tab active"
+              data-category="graduacao"
+              data-i18n="tab_grad"
+            >
+              🎓 Graduação
+            </button>
+            <button class="tab" data-category="pos" data-i18n="tab_pos">
+              📜 Pós
+            </button>
+            <button class="tab" data-category="cursos" data-i18n="tab_courses">
+              🤖 Cursos Livres
+            </button>
+            <button class="tab" data-category="all" data-i18n="tab_all">
+              ✨ Todos
+            </button>
+          </nav>
+
+          <div class="split-view">
+            <aside
+              class="courses-list"
+              id="coursesList"
+              aria-label="Lista de cursos"
+            ></aside>
+
+            <section
+              class="preview"
+              id="preview"
+              aria-label="Visualização do certificado"
+            >
+              <div class="preview-empty">
+                <h3 data-i18n="preview_pick">Selecione um curso</h3>
+                <p data-i18n="preview_pick_sub">
+                  O certificado e as informações aparecerão aqui.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section id="projetos" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 data-i18n="projects_title">Projetos</h2>
+            <p data-i18n="projects_sub">
+              Cards com utilidade + tecnologias. Clique para ver detalhes.
+            </p>
+          </div>
+
+          <div class="projects-toolbar">
+            <input
+              id="projectSearch"
+              class="input"
+              type="search"
+              placeholder="Buscar projeto..."
+            />
+            <div
+              id="techFilters"
+              class="filters"
+              aria-label="Filtros de tecnologia"
+            ></div>
+          </div>
+
+          <div
+            id="projectsGrid"
+            class="projects-grid"
+            aria-label="Lista de projetos"
+          ></div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2 data-i18n="contact_title">Contato</h2>
+            <p data-i18n="contact_sub">Links e um CTA final simples.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-left">
+              <h3 data-i18n="contact_lets">Vamos conversar</h3>
+              <p class="muted" data-i18n="contact_hint">
+                Deixe seus links aqui (LinkedIn, GitHub, e-mail, WhatsApp).
+              </p>
+
+              <div class="contact-actions">
+                <a
+                  class="btn primary"
+                  href="https://www.linkedin.com/in/felipe-costa-desenvolvedor"
+                  target="_blank"
+                  rel="noopener"
+                  >LinkedIn</a
+                >
+                <a
+                  class="btn"
+                  href="https://github.com/Felipebcosta09"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub</a
+                >
+                <button class="btn ghost" id="copyEmail" type="button">
+                  📋 Copiar e-mail
+                </button>
+              </div>
+
+              <p class="tiny muted" id="copyMsg"></p>
+            </div>
+
+            <div class="contact-right">
+              <div class="contact-mini">
+                <span class="muted" data-i18n="contact_email">E-mail</span>
+                <strong id="emailText">felipedevportugal@gmail.com</strong>
+              </div>
+              <div class="contact-mini">
+                <span class="muted" data-i18n="contact_location">Local</span>
+                <strong>Brasil / Portugal</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODAL (Detalhes do projeto) -->
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+      <div
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Detalhes do projeto"
+      >
+        <button
+          class="modal-close"
+          type="button"
+          data-close="true"
+          aria-label="Fechar"
+        >
+          ✕
+        </button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="muted"
+          >© <span id="year"></span> Felipe. Portfólio interativo.</span
+        >
+        <a class="muted" href="#home" data-i18n="back_top">Voltar ao topo ↑</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

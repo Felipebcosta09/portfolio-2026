@@ -1,0 +1,42 @@
+[
+  {
+    "category": "graduacao",
+    "icon": "🎓",
+    "titulo": "Graduação em (Seu curso aqui)",
+    "instituicao": "(Sua faculdade)",
+    "carga": "xxxxh",
+    "data": "AAAA",
+    "type": "pdf",
+    "arquivo": "assets/certificados/graduacao.pdf"
+  },
+  {
+    "category": "pos",
+    "icon": "📜",
+    "titulo": "Pós-graduação em Cloud & DevOps",
+    "instituicao": "UNINTER",
+    "carga": "360h",
+    "data": "2025",
+    "type": "pdf",
+    "arquivo": "assets/certificados/pos-devops.pdf"
+  },
+  {
+    "category": "pos",
+    "icon": "🤖",
+    "titulo": "Pós-graduação em Ciência de Dados e IA",
+    "instituicao": "UNINTER",
+    "carga": "360h",
+    "data": "2025",
+    "type": "pdf",
+    "arquivo": "assets/certificados/pos-dados-ia.pdf"
+  },
+  {
+    "category": "cursos",
+    "icon": "☁️",
+    "titulo": "Curso AWS (exemplo)",
+    "instituicao": "Plataforma X",
+    "carga": "xxh",
+    "data": "AAAA",
+    "type": "image",
+    "arquivo": "assets/certificados/aws.jpg"
+  }
+]
