@@ -215,20 +215,27 @@ function renderTechFilters(projects) {
 }
 
 function matchProject(p) {
+  const lang = localStorage.getItem("lang") || "pt";
+
   const byTech = activeTech === "all" || (p.filter || []).includes(activeTech);
 
   const q = searchText.trim().toLowerCase();
 
-  const hay =
-    `${p.title} ${p.subtitle} ${p.problem} ${p.solution} ${(p.stack || []).join(" ")}`.toLowerCase();
+  const hay = `
+    ${p.title?.[lang] || ""}
+    ${p.subtitle?.[lang] || ""}
+    ${p.problem?.[lang] || ""}
+    ${p.solution?.[lang] || ""}
+    ${(p.stack || []).join(" ")}
+  `.toLowerCase();
 
   const bySearch = !q || hay.includes(q);
 
   return byTech && bySearch;
 }
-
 function renderProjects() {
   const filtered = allProjects.filter(matchProject);
+  const lang = localStorage.getItem("lang") || "pt";
 
   if (filtered.length === 0) {
     projectsGrid.innerHTML = `<div class="muted">Nenhum projeto encontrado.</div>`;
@@ -240,62 +247,99 @@ function renderProjects() {
       (p) => `
     <article class="project-card" data-id="${p.id}">
       <div class="project-top">
-        <div class="project-title">${p.title}</div>
-        <div class="project-badge">${p.badge || ""}</div>
+        <div class="project-title">${p.title?.[lang] || ""}</div>
+        <div class="project-badge">${p.badge?.[lang] || p.badge || ""}</div>
       </div>
-      <div class="project-desc">${p.subtitle || ""}</div>
+      <div class="project-desc">${p.subtitle?.[lang] || ""}</div>
       <div class="project-tags">
-  ${(p.stack || [])
-    .slice(0, 6)
-    .map((t) => `<span class="tag">${t}</span>`)
-    .join("")}
-</div>
-
+        ${(p.stack || [])
+          .slice(0, 6)
+          .map((t) => `<span class="tag">${t}</span>`)
+          .join("")}
+      </div>
     </article>
   `,
     )
     .join("");
 }
+let currentOpenProject = null;
 
 function openProjectModal(project) {
+  currentOpenProject = project; // salva o projeto atualmente aberto
+
   const modal = $("#projectModal");
   const content = $("#modalContent");
+  const lang = localStorage.getItem("lang") || "pt";
 
-  const links = project.links || [];
-  const linkBtns = links
+  // Função auxiliar para pegar texto multilíngue
+  const t = (field) => {
+    if (!field) return "";
+    if (typeof field === "string") return field;
+    return field[lang] || field.pt || "";
+  };
+
+  const links = (project.links || [])
     .map(
       (l) => `
-    <a class="btn ${l.primary ? "primary" : ""}" href="${l.url}" target="_blank" rel="noopener">
-      ${l.label}
+    <a class="btn ${l.primary ? "primary" : ""}" 
+       href="${l.url}" 
+       target="_blank" 
+       rel="noopener">
+       ${t(l.label)}
     </a>
   `,
     )
     .join("");
 
-  const cover = project.cover
-    ? `
-    <div style="margin:10px 0 14px;">
-      <img src="${project.cover}" alt="Capa do projeto ${project.title}" style="width:100%;border-radius:14px;border:1px solid var(--border);" />
-    </div>
-  `
-    : "";
+  const highlights = Array.isArray(project.highlights)
+    ? project.highlights
+    : project.highlights?.[lang] || [];
 
   content.innerHTML = `
-    <h3 style="font-size:20px;margin-bottom:6px;">${project.title}</h3>
-    <p class="muted" style="margin-bottom:12px;">${project.subtitle || ""}</p>
+    <h3 style="font-size:20px;margin-bottom:6px;">
+      ${t(project.title)}
+    </h3>
 
-    ${cover}
+    <p class="muted" style="margin-bottom:12px;">
+      ${t(project.subtitle)}
+    </p>
+
+    ${
+      project.cover
+        ? `
+      <div style="margin:10px 0 14px;">
+        <img src="${project.cover}" 
+             alt="Capa do projeto ${t(project.title)}" 
+             style="width:100%;border-radius:14px;border:1px solid var(--border);" />
+      </div>
+    `
+        : ""
+    }
 
     <div class="preview-info">
-      <div class="info-chip"><span>Problema</span>${project.problem || "—"}</div>
-      <div class="info-chip"><span>Solução / Utilidade</span>${project.solution || "—"}</div>
-      <div class="info-chip"><span>Tecnologias</span>${(project.stack || []).join(", ") || "—"}</div>
+      <div class="info-chip">
+        <span>${lang === "en" ? "Problem" : "Problema"}</span>
+        ${t(project.problem)}
+      </div>
 
-      <div class="info-chip"><span>Destaques</span>${(project.highlights || []).slice(0, 3).join(" • ") || "—"}</div>
+      <div class="info-chip">
+        <span>${lang === "en" ? "Solution" : "Solução"}</span>
+        ${t(project.solution)}
+      </div>
+
+      <div class="info-chip">
+        <span>${lang === "en" ? "Technologies" : "Tecnologias"}</span>
+        ${(project.stack || []).join(", ")}
+      </div>
+
+      <div class="info-chip">
+        <span>${lang === "en" ? "Highlights" : "Destaques"}</span>
+        ${(highlights || []).join(" • ")}
+      </div>
     </div>
 
     <div class="preview-actions">
-      ${linkBtns || `<span class="muted">Sem links adicionados ainda.</span>`}
+      ${links || `<span class="muted">${lang === "en" ? "No links available." : "Sem links disponíveis."}</span>`}
     </div>
   `;
 
@@ -310,34 +354,43 @@ function closeModal() {
 }
 
 async function initProjects() {
-  const res = await fetch("data/projects.json");
-  allProjects = await res.json();
+  try {
+    const res = await fetch("data/projects.json");
 
-  renderTechFilters(allProjects);
-  renderProjects();
+    if (!res.ok) {
+      throw new Error("Erro ao carregar projects.json");
+    }
 
-  projectSearch.addEventListener("input", (e) => {
-    searchText = e.target.value;
+    allProjects = await res.json();
+
+    renderTechFilters(allProjects);
     renderProjects();
-  });
 
-  projectsGrid.addEventListener("click", (e) => {
-    const card = e.target.closest(".project-card");
-    if (!card) return;
-    const id = card.dataset.id;
-    const project = allProjects.find((p) => String(p.id) === String(id));
-    if (project) openProjectModal(project);
-  });
+    projectSearch.addEventListener("input", (e) => {
+      searchText = e.target.value;
+      renderProjects();
+    });
 
-  $("#projectModal").addEventListener("click", (e) => {
-    if (e.target.dataset.close === "true") closeModal();
-  });
+    projectsGrid.addEventListener("click", (e) => {
+      const card = e.target.closest(".project-card");
+      if (!card) return;
+      const id = card.dataset.id;
+      const project = allProjects.find((p) => String(p.id) === String(id));
+      if (project) openProjectModal(project);
+    });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
-  });
+    $("#projectModal").addEventListener("click", (e) => {
+      if (e.target.dataset.close === "true") closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+  } catch (error) {
+    console.error("Erro ao iniciar projetos:", error);
+    projectsGrid.innerHTML = `<div class="muted">Erro ao carregar projetos.</div>`;
+  }
 }
-
 /* INIT */
 initFormacoes().catch(console.error);
 initProjects().catch(console.error);
@@ -349,11 +402,10 @@ initProjects().catch(console.error);
 // i18n PT/EN (Site todo)
 // ============================
 const langToggle = document.getElementById("langToggle");
-
 const i18n = {
   pt: {
-    // Nav / botões
-    nav_about: "Sobre",
+    // Nav
+    nav_experiences: "Experiências",
     nav_edu: "Formações",
     nav_projects: "Projetos",
     nav_contact: "Contato",
@@ -367,19 +419,32 @@ const i18n = {
       "Formação, certificações e projetos com utilidade clara, stack utilizada e organização técnica.",
     hero_btn_projects: "🚀 Projetos",
     hero_btn_certs: "🎓 Certificados",
-
     hero_card_title: "O que você encontra aqui",
     hero_li_1: "✅ Formações com certificados (visualização)",
     hero_li_2: "✅ Projetos com utilidade + stack + links",
     hero_li_3: "✅ Filtros por tecnologia e busca",
     hero_li_4: "✅ UI/UX limpa, responsiva e rápida",
 
-    // Sobre
-    about_title: "Sobre",
-    about_sub: "Resumo curto e objetivo (aqui você escreve 4–6 linhas).",
-    stat_projects: "Projetos",
-    stat_certs: "Cursos/Certificados",
-    stat_focus: "Stacks foco",
+    // Experiências
+    exp_title: "Experiências",
+    exp_sub: "Minha trajetória profissional na área de tecnologia.",
+
+    exp1_title: "Técnico de Suporte de TI",
+    exp1_company: "Centro de Operações Rio (COR)",
+    exp1_desc:
+      "Atuação no setor de TI com suporte presencial, resolução de chamados, infraestrutura de rede e desenvolvimento de soluções internas.",
+    exp1_li1: "Sistema interno integrado ao Google Calendar",
+    exp1_li2: "Ferramenta de monitoramento automático de links",
+    exp1_li3: "Infraestrutura e cabeamento estruturado",
+    exp1_li4: "Administração básica de Active Directory",
+
+    exp2_title: "Desenvolvedor Web",
+    exp2_company: "VVTrafficData – Portugal (Presencial)",
+    exp2_desc:
+      "Desenvolvimento e manutenção de aplicações web com foco em responsividade e boas práticas.",
+    exp2_li1: "Criação de interfaces responsivas",
+    exp2_li2: "Organização de layout e hierarquia visual",
+    exp2_li3: "Melhoria da experiência do usuário",
 
     // Formações
     edu_title: "Formações & Certificados",
@@ -411,12 +476,14 @@ const i18n = {
   },
 
   en: {
-    nav_about: "About",
+    // Nav
+    nav_experiences: "Experience",
     nav_edu: "Education",
     nav_projects: "Projects",
     nav_contact: "Contact",
     nav_projects_btn: "View Projects",
 
+    // Hero
     kicker: "Interactive Portfolio",
     hero_title:
       "Full Stack Developer focused on UI/UX, best practices, and solutions that solve real problems.",
@@ -424,19 +491,34 @@ const i18n = {
       "Education, certifications, and projects with clear purpose, stack used, and solid technical organization.",
     hero_btn_projects: "🚀 Projects",
     hero_btn_certs: "🎓 Certificates",
-
     hero_card_title: "What you’ll find here",
     hero_li_1: "✅ Education with certificate preview",
     hero_li_2: "✅ Projects with purpose + stack + links",
     hero_li_3: "✅ Tech filters and search",
     hero_li_4: "✅ Clean, responsive, fast UI/UX",
 
-    about_title: "About",
-    about_sub: "Short and objective summary (write 4–6 lines here).",
-    stat_projects: "Projects",
-    stat_certs: "Courses/Certificates",
-    stat_focus: "Focus stacks",
+    // Experience
+    exp_title: "Experience",
+    exp_sub: "My professional journey in technology.",
 
+    exp1_title: "IT Support Technician",
+    exp1_company: "Rio Operations Center (COR)",
+    exp1_desc:
+      "IT department support with on-site help desk, infrastructure, and internal system development.",
+    exp1_li1: "Internal system integrated with Google Calendar",
+    exp1_li2: "Automated link monitoring tool",
+    exp1_li3: "Network infrastructure and structured cabling",
+    exp1_li4: "Basic Active Directory administration",
+
+    exp2_title: "Web Developer",
+    exp2_company: "VVTrafficData – Portugal (On-site)",
+    exp2_desc:
+      "Development and maintenance of web applications focused on responsiveness and best practices.",
+    exp2_li1: "Responsive interface development",
+    exp2_li2: "Layout organization and visual hierarchy",
+    exp2_li3: "User experience improvement",
+
+    // Education
     edu_title: "Education & Certificates",
     edu_sub: "Click an item to preview the certificate.",
     edu_library: "Certificate Library",
@@ -449,10 +531,12 @@ const i18n = {
     preview_pick: "Select a course",
     preview_pick_sub: "The certificate and details will appear here.",
 
+    // Projects
     projects_title: "Projects",
     projects_sub: "Cards with purpose + technologies. Click to view details.",
     projects_search: "Search project...",
 
+    // Contact
     contact_title: "Contact",
     contact_sub: "Links and a simple final CTA.",
     contact_lets: "Let’s talk",
@@ -481,7 +565,11 @@ function applyLanguage(lang) {
 
   localStorage.setItem("lang", lang);
 
-  // (Opcional) aqui depois a gente atualiza cursos/projetos vindos do JSON com base no idioma
+  const modal = document.getElementById("projectModal");
+
+  if (currentOpenProject && modal && modal.classList.contains("open")) {
+    openProjectModal(currentOpenProject);
+  }
 }
 
 applyLanguage(localStorage.getItem("lang") || "pt");

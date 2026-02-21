@@ -1,95 +1,166 @@
 [
   {
     "id": 1,
-    "title": "Tete Bolos",
-    "subtitle": "Site institucional para confeitaria com layout visual forte.",
-    "badge": "Cliente",
-    "problem": "Negócio precisava de presença digital para apresentar produtos e facilitar pedidos.",
-    "solution": "Desenvolvimento de site responsivo com carrossel, seção de cardápio e foco visual nos produtos.",
+    "title": { "pt": "Tete Bolos", "en": "Tete Cakes" },
+    "subtitle": {
+      "pt": "Site institucional para confeitaria com layout visual forte.",
+      "en": "Institutional website for a bakery with strong visual identity."
+    },
+    "badge": { "pt": "Cliente", "en": "Client" },
+    "problem": {
+      "pt": "Negócio precisava de presença digital para apresentar produtos e facilitar pedidos.",
+      "en": "The business needed a digital presence to showcase products and facilitate orders."
+    },
+    "solution": {
+      "pt": "Desenvolvimento de site responsivo com carrossel, seção de cardápio e foco visual nos produtos.",
+      "en": "Development of a responsive website with carousel, menu section, and strong visual focus on products."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Carrossel personalizado",
-      "Layout visual forte",
-      "Responsividade",
-      "Seção de cardápio dinâmica"
-    ],
+    "highlights": {
+      "pt": [
+        "Carrossel personalizado",
+        "Layout visual forte",
+        "Responsividade",
+        "Seção de cardápio dinâmica"
+      ],
+      "en": [
+        "Custom carousel",
+        "Strong visual layout",
+        "Responsiveness",
+        "Dynamic menu section"
+      ]
+    },
     "cover": "assets/projetos/tetebolos.jpg",
     "links": [
       {
-        "label": "🌐 Ver site",
+        "label": { "pt": "🌐 Ver site", "en": "🌐 View site" },
         "url": "https://tetebolos.netlify.app/",
         "primary": true
       }
     ]
   },
+
   {
     "id": 2,
-    "title": "VV Group",
-    "subtitle": "Landing corporativa com foco em autoridade e conversão.",
-    "badge": "Cliente",
-    "problem": "Empresa precisava apresentar serviços estratégicos com credibilidade.",
-    "solution": "Estruturação de seções com hierarquia visual forte e CTAs orientados à conversão.",
+    "title": { "pt": "VV Group", "en": "VV Group" },
+    "subtitle": {
+      "pt": "Landing corporativa com foco em autoridade e conversão.",
+      "en": "Corporate landing page focused on authority and conversion."
+    },
+    "badge": { "pt": "Cliente", "en": "Client" },
+    "problem": {
+      "pt": "Empresa precisava apresentar serviços estratégicos com credibilidade.",
+      "en": "Company needed to present strategic services with credibility."
+    },
+    "solution": {
+      "pt": "Estruturação de seções com hierarquia visual forte e CTAs orientados à conversão.",
+      "en": "Structured sections with strong visual hierarchy and conversion-oriented CTAs."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Hierarquia visual",
-      "Layout corporativo",
-      "CTAs estratégicos",
-      "Responsividade"
-    ],
+    "highlights": {
+      "pt": [
+        "Hierarquia visual",
+        "Layout corporativo",
+        "CTAs estratégicos",
+        "Responsividade"
+      ],
+      "en": [
+        "Visual hierarchy",
+        "Corporate layout",
+        "Strategic CTAs",
+        "Responsiveness"
+      ]
+    },
     "cover": "assets/projetos/vvgroup.jpg",
     "links": [
       {
-        "label": "🌐 Ver site",
+        "label": { "pt": "🌐 Ver site", "en": "🌐 View site" },
         "url": "https://vv-group.netlify.app/",
         "primary": true
       }
     ]
   },
+
   {
     "id": 3,
-    "title": "AUCTA Automações",
-    "subtitle": "Landing moderna para serviços de automação e soluções digitais.",
-    "badge": "Marca própria",
-    "problem": "Criar presença digital profissional para oferta de soluções tecnológicas.",
-    "solution": "Desenvolvimento de layout moderno com foco em autoridade e apresentação clara de serviços.",
+    "title": { "pt": "AUCTA Automações", "en": "AUCTA Automations" },
+    "subtitle": {
+      "pt": "Landing moderna para serviços de automação e soluções digitais.",
+      "en": "Modern landing page for automation services and digital solutions."
+    },
+    "badge": { "pt": "Marca própria", "en": "Own Brand" },
+    "problem": {
+      "pt": "Criar presença digital profissional para oferta de soluções tecnológicas.",
+      "en": "Create a professional digital presence to offer technological solutions."
+    },
+    "solution": {
+      "pt": "Desenvolvimento de layout moderno com foco em autoridade e apresentação clara de serviços.",
+      "en": "Modern layout development focused on authority and clear service presentation."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Design moderno",
-      "Estrutura para conversão",
-      "Deploy em produção",
-      "Layout estratégico"
-    ],
+    "highlights": {
+      "pt": [
+        "Design moderno",
+        "Estrutura para conversão",
+        "Deploy em produção",
+        "Layout estratégico"
+      ],
+      "en": [
+        "Modern design",
+        "Conversion structure",
+        "Production deployment",
+        "Strategic layout"
+      ]
+    },
     "cover": "assets/projetos/aucta-automacoes.jpg",
     "links": [
       {
-        "label": "🌐 Ver site",
+        "label": { "pt": "🌐 Ver site", "en": "🌐 View site" },
         "url": "https://aucta-automacoes.netlify.app/",
         "primary": true
       }
     ]
   },
+
   {
     "id": 4,
-    "title": "VV Studios",
-    "subtitle": "Site institucional para estúdio com foco visual e apresentação de serviços.",
-    "badge": "Cliente",
-    "problem": "Estúdio precisava de presença digital elegante e organizada.",
-    "solution": "Criação de layout com foco visual, seções bem definidas e animações suaves.",
+    "title": { "pt": "VV Studios", "en": "VV Studios" },
+    "subtitle": {
+      "pt": "Site institucional para estúdio com foco visual e apresentação de serviços.",
+      "en": "Institutional website for a studio with visual focus and service presentation."
+    },
+    "badge": { "pt": "Cliente", "en": "Client" },
+    "problem": {
+      "pt": "Estúdio precisava de presença digital elegante e organizada.",
+      "en": "Studio needed an elegant and organized digital presence."
+    },
+    "solution": {
+      "pt": "Criação de layout com foco visual, seções bem definidas e animações suaves.",
+      "en": "Layout creation with strong visual focus, well-defined sections and smooth animations."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Animações suaves",
-      "Layout elegante",
-      "Seções organizadas",
-      "Responsividade"
-    ],
+    "highlights": {
+      "pt": [
+        "Animações suaves",
+        "Layout elegante",
+        "Seções organizadas",
+        "Responsividade"
+      ],
+      "en": [
+        "Smooth animations",
+        "Elegant layout",
+        "Organized sections",
+        "Responsiveness"
+      ]
+    },
     "cover": "assets/projetos/vvstudios.jpg",
     "links": [
       {
-        "label": "🌐 Ver site",
+        "label": { "pt": "🌐 Ver site", "en": "🌐 View site" },
         "url": "https://vvstudios.netlify.app/",
         "primary": true
       }
@@ -97,120 +168,186 @@
   },
   {
     "id": 5,
-    "title": "AUCTA (Site Oficial)",
-    "subtitle": "Site oficial da marca AUCTA com foco em serviços digitais.",
-    "badge": "Produção",
-    "problem": "Consolidar identidade digital e apresentar serviços profissionais.",
-    "solution": "Desenvolvimento de site institucional moderno com identidade visual própria.",
+    "title": { "pt": "AUCTA (Site Oficial)", "en": "AUCTA (Official Website)" },
+    "subtitle": {
+      "pt": "Site oficial da marca AUCTA com foco em serviços digitais.",
+      "en": "Official website of the AUCTA brand focused on digital services."
+    },
+    "badge": { "pt": "Produção", "en": "Production" },
+    "problem": {
+      "pt": "Consolidar identidade digital e apresentar serviços profissionais.",
+      "en": "Consolidate digital identity and present professional services."
+    },
+    "solution": {
+      "pt": "Desenvolvimento de site institucional moderno com identidade visual própria.",
+      "en": "Development of a modern institutional website with its own visual identity."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Identidade visual forte",
-      "Deploy com domínio próprio",
-      "Estrutura profissional"
-    ],
+    "highlights": {
+      "pt": [
+        "Identidade visual forte",
+        "Deploy com domínio próprio",
+        "Estrutura profissional"
+      ],
+      "en": [
+        "Strong visual identity",
+        "Production deployment with custom domain",
+        "Professional structure"
+      ]
+    },
     "cover": "assets/projetos/aucta.jpg",
     "links": [
-      { "label": "🌐 Ver site", "url": "https://aucta.pt/", "primary": true }
+      {
+        "label": { "pt": "🌐 Ver site", "en": "🌐 View site" },
+        "url": "https://aucta.pt/",
+        "primary": true
+      }
     ]
   },
+
   {
     "id": 6,
-    "title": "Agenda COR",
-    "subtitle": "Painel com integração de agenda e organização visual.",
-    "badge": "Projeto técnico",
-    "problem": "Organizar agenda pública com visual claro e dados estruturados.",
-    "solution": "Criação de painel responsivo com integração de agenda e organização por seções.",
+    "title": { "pt": "Agenda COR", "en": "COR Agenda Dashboard" },
+    "subtitle": {
+      "pt": "Painel com integração de agenda e organização visual.",
+      "en": "Dashboard with calendar integration and structured visual layout."
+    },
+    "badge": { "pt": "Projeto técnico", "en": "Technical Project" },
+    "problem": {
+      "pt": "Organizar agenda pública com visual claro e dados estruturados.",
+      "en": "Organize public agenda with clear layout and structured data."
+    },
+    "solution": {
+      "pt": "Criação de painel responsivo integrado ao Google Calendar.",
+      "en": "Development of a responsive dashboard integrated with Google Calendar."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Integração externa",
-      "Layout em grid",
-      "Atualização dinâmica",
-      "Responsividade"
-    ],
+    "highlights": {
+      "pt": [
+        "Integração Google Calendar",
+        "Layout em grid",
+        "Atualização dinâmica"
+      ],
+      "en": ["Google Calendar integration", "Grid layout", "Dynamic updates"]
+    },
     "cover": "assets/projetos/agenda-cor.jpg",
-    "links": [
-      {
-        "label": "🌐 Ver site",
-        "url": "https://agenda-cor.netlify.app/",
-        "primary": true
-      }
-    ]
+    "links": []
   },
+
   {
     "id": 7,
-    "title": "Barbearia (Em desenvolvimento)",
-    "subtitle": "Landing para serviços locais com foco em agendamento.",
-    "badge": "Em breve",
-    "problem": "Negócio local precisava modernizar presença digital.",
-    "solution": "Projeto em desenvolvimento com foco em agendamento online.",
+    "title": {
+      "pt": "Barbearia (Em desenvolvimento)",
+      "en": "Barbershop (In Development)"
+    },
+    "subtitle": {
+      "pt": "Landing para serviços locais com foco em agendamento.",
+      "en": "Landing page for local services focused on booking."
+    },
+    "badge": { "pt": "Em breve", "en": "Coming Soon" },
+    "problem": {
+      "pt": "Negócio local precisava modernizar presença digital.",
+      "en": "Local business needed to modernize its digital presence."
+    },
+    "solution": {
+      "pt": "Projeto em desenvolvimento com foco em agendamento online.",
+      "en": "Project under development focused on online booking."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Agendamento online",
-      "Layout moderno",
-      "Experiência intuitiva"
-    ],
+    "highlights": {
+      "pt": ["Agendamento online", "Layout moderno", "Experiência intuitiva"],
+      "en": ["Online booking", "Modern layout", "Intuitive experience"]
+    },
     "cover": "assets/projetos/barbearia.jpg",
-    "links": [
-      {
-        "label": "🌐 Ver site",
-        "url": "ADICIONAR LINK DO SITE AQUI",
-        "primary": true
-      }
-    ]
+    "links": []
   },
+
   {
     "id": 8,
-    "title": "Imobiliária (Em desenvolvimento)",
-    "subtitle": "Plataforma para apresentação e organização de imóveis.",
-    "badge": "Em breve",
-    "problem": "Necessidade de organizar imóveis com filtros e visual profissional.",
-    "solution": "Projeto com sistema de listagem, filtros e detalhamento.",
+    "title": {
+      "pt": "Imobiliária (Em desenvolvimento)",
+      "en": "Real Estate Platform (In Development)"
+    },
+    "subtitle": {
+      "pt": "Plataforma para apresentação e organização de imóveis.",
+      "en": "Platform for listing and organizing properties."
+    },
+    "badge": { "pt": "Em breve", "en": "Coming Soon" },
+    "problem": {
+      "pt": "Necessidade de organizar imóveis com filtros e visual profissional.",
+      "en": "Need to organize properties with filters and professional layout."
+    },
+    "solution": {
+      "pt": "Projeto com sistema de listagem, filtros e detalhamento.",
+      "en": "Project with listing system, filters and detailed views."
+    },
     "stack": ["HTML", "CSS", "JavaScript"],
     "filter": ["JavaScript"],
-    "highlights": [
-      "Sistema de filtros",
-      "Cards dinâmicos",
-      "Estrutura escalável"
-    ],
+    "highlights": {
+      "pt": ["Sistema de filtros", "Cards dinâmicos", "Estrutura escalável"],
+      "en": ["Filter system", "Dynamic cards", "Scalable structure"]
+    },
     "cover": "assets/projetos/imobiliaria.jpg",
-    "links": [
-      {
-        "label": "🌐 Ver site",
-        "url": "ADICIONAR LINK DO SITE AQUI",
-        "primary": true
-      }
-    ]
+    "links": []
   },
+
   {
     "id": 9,
-    "title": "Sistema Backend PHP (Teste)",
-    "subtitle": "Projeto teste para validar filtro por linguagem PHP.",
-    "badge": "Teste",
-    "problem": "Validar funcionamento do sistema de filtros por linguagem.",
-    "solution": "Projeto fictício apenas para teste visual no portfólio.",
+    "title": {
+      "pt": "Sistema Backend PHP (Teste)",
+      "en": "PHP Backend System (Test)"
+    },
+    "subtitle": {
+      "pt": "Projeto teste para validar filtro por linguagem PHP.",
+      "en": "Test project to validate PHP language filtering."
+    },
+    "badge": { "pt": "Teste", "en": "Test" },
+    "problem": {
+      "pt": "Validar funcionamento do sistema de filtros por linguagem.",
+      "en": "Validate the functionality of language-based filters."
+    },
+    "solution": {
+      "pt": "Projeto fictício apenas para teste visual no portfólio.",
+      "en": "Fictional project created only for visual testing in the portfolio."
+    },
     "stack": ["HTML", "CSS", "PHP", "MySQL"],
     "filter": ["PHP"],
-    "highlights": ["Backend simulado", "Estrutura MVC", "Integração com banco"],
+    "highlights": {
+      "pt": ["Backend simulado", "Estrutura MVC", "Integração com banco"],
+      "en": ["Simulated backend", "MVC structure", "Database integration"]
+    },
     "cover": "assets/projetos/php-teste.jpg",
     "links": []
   },
+
   {
     "id": 10,
-    "title": "API Python Flask (Teste)",
-    "subtitle": "Projeto teste para validar filtro por linguagem Python.",
-    "badge": "Teste",
-    "problem": "Testar exibição automática de nova linguagem no filtro.",
-    "solution": "Projeto fictício para simular backend em Python.",
+    "title": {
+      "pt": "API Python Flask (Teste)",
+      "en": "Python Flask API (Test)"
+    },
+    "subtitle": {
+      "pt": "Projeto teste para validar filtro por linguagem Python.",
+      "en": "Test project to validate Python language filtering."
+    },
+    "badge": { "pt": "Teste", "en": "Test" },
+    "problem": {
+      "pt": "Testar exibição automática de nova linguagem no filtro.",
+      "en": "Test automatic display of new language in filter system."
+    },
+    "solution": {
+      "pt": "Projeto fictício para simular backend em Python.",
+      "en": "Fictional project to simulate a Python backend."
+    },
     "stack": ["HTML", "CSS", "Python", "Flask"],
     "filter": ["Python"],
-    "highlights": [
-      "API REST simulada",
-      "Estrutura Flask",
-      "Organização backend"
-    ],
+    "highlights": {
+      "pt": ["API REST simulada", "Estrutura Flask", "Organização backend"],
+      "en": ["Simulated REST API", "Flask structure", "Backend organization"]
+    },
     "cover": "assets/projetos/python-teste.jpg",
     "links": []
   }

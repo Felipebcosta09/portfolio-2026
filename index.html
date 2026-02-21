@@ -57,7 +57,9 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-
+  <div id="rocketCursor">
+    <img src="assets/rocket.png" alt="Rocket Cursor" />
+  </div>
   <body>
     <!-- NAV -->
     <header class="topbar">
@@ -65,7 +67,7 @@
         <a class="brand" href="#home">Felipe<span>.</span></a>
 
         <nav class="nav">
-          <a href="#sobre" data-i18n="nav_about">Sobre</a>
+          <a href="#experiences" data-i18n="nav_experiences">Experiências</a>
           <a href="#formacoes" data-i18n="nav_edu">Formações</a>
           <a href="#projetos" data-i18n="nav_projects">Projetos</a>
           <a href="#contato" data-i18n="nav_contact">Contato</a>
@@ -73,12 +75,17 @@
 
         <div class="topbar-actions">
           <button
-            class="btn ghost"
+            class="lang-btn"
             id="langToggle"
             type="button"
             aria-label="Alternar idioma"
           >
-            PT/EN
+            <img
+              src="assets/pt-flag.png"
+              alt="Português"
+              class="flag flag-pt"
+            />
+            <img src="assets/us-flag.png" alt="English" class="flag flag-en" />
           </button>
           <button
             class="btn ghost"
@@ -152,27 +159,85 @@
           </div>
         </div>
       </section>
-
-      <!-- SOBRE -->
-      <section id="sobre" class="section">
+      <!-- Experiencias -->
+      <section id="experiences" class="section">
         <div class="container">
           <div class="section-head">
-            <h2 data-i18n="about_title">Sobre</h2>
-            <p data-i18n="about_sub">
-              Resumo curto e objetivo (aqui você escreve 4–6 linhas).
+            <h2 data-i18n="exp_title">Experiências</h2>
+            <p data-i18n="exp_sub">
+              Minha trajetória profissional na área de tecnologia.
             </p>
           </div>
 
-          <div class="stats">
-            <span class="stat-label" data-i18n="stat_projects">Projetos</span>
-            <span class="stat-label" data-i18n="stat_certs"
-              >Cursos/Certificados</span
-            >
-            <span class="stat-label" data-i18n="stat_focus">Stacks foco</span>
+          <div class="experience-grid">
+            <!-- CARD 1 -->
+            <div class="experience-card">
+              <div class="exp-top">
+                <h3 data-i18n="exp1_title">Técnico de Suporte de TI</h3>
+                <span class="exp-date">
+                  Jun 2024 – Mar 2025 | Jan 2026 – Atual
+                </span>
+              </div>
+              <div class="exp-company" data-i18n="exp1_company">
+                Centro de Operações Rio (COR)
+                <span class="exp-badge">Presencial</span>
+              </div>
+
+              <p class="exp-desc" data-i18n="exp1_desc">
+                "Atuação presencial no setor de TI, unindo suporte técnico,
+                infraestrutura de rede e desenvolvimento de soluções internas
+                para otimização de processos operacionais."
+              </p>
+
+              <ul class="exp-list">
+                <li data-i18n="exp1_li1">
+                  Sistema interno integrado ao Google Calendar
+                </li>
+                <li data-i18n="exp1_li2">
+                  Ferramenta de monitoramento automático de links
+                </li>
+                <li data-i18n="exp1_li3">
+                  Infraestrutura e cabeamento estruturado
+                </li>
+                <li data-i18n="exp1_li4">
+                  Administração básica de Active Directory
+                </li>
+              </ul>
+
+              <div class="exp-stack">
+                HTML • CSS • JavaScript • Active Directory • Redes
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="experience-card">
+              <div class="exp-top">
+                <h3 data-i18n="exp2_title">Desenvolvedor Web</h3>
+                <span class="exp-date"> Jun 2025 – Dez 2025 </span>
+              </div>
+
+              <div class="exp-company" data-i18n="exp2_company">
+                VVTrafficData – Portugal (Presencial)
+              </div>
+
+              <p class="exp-desc" data-i18n="exp2_desc">
+                Desenvolvimento e manutenção de aplicações web com foco em
+                responsividade e boas práticas.
+              </p>
+
+              <ul class="exp-list">
+                <li data-i18n="exp2_li1">Criação de interfaces responsivas</li>
+                <li data-i18n="exp2_li2">
+                  Organização de layout e hierarquia visual
+                </li>
+                <li data-i18n="exp2_li3">Melhoria da experiência do usuário</li>
+              </ul>
+
+              <div class="exp-stack">HTML • CSS • JavaScript</div>
+            </div>
           </div>
         </div>
       </section>
-
       <!-- FORMAÇÕES (Split View) -->
       <section id="formacoes" class="section">
         <div class="container">
@@ -281,47 +346,76 @@
         <div class="container">
           <div class="section-head">
             <h2 data-i18n="contact_title">Contato</h2>
-            <p data-i18n="contact_sub">Links e um CTA final simples.</p>
+            <p data-i18n="contact_sub">Vamos nos conectar.</p>
           </div>
 
           <div class="contact-card">
             <div class="contact-left">
-              <h3 data-i18n="contact_lets">Vamos conversar</h3>
-              <p class="muted" data-i18n="contact_hint">
-                Deixe seus links aqui (LinkedIn, GitHub, e-mail, WhatsApp).
-              </p>
+              <h3>Redes</h3>
 
-              <div class="contact-actions">
+              <div class="social-icons">
+                <!-- LinkedIn -->
                 <a
-                  class="btn primary"
                   href="https://www.linkedin.com/in/felipe-costa-desenvolvedor"
                   target="_blank"
-                  rel="noopener"
-                  >LinkedIn</a
+                  class="social-icon"
+                  aria-label="LinkedIn"
                 >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      fill="currentColor"
+                      d="M19 3A2 2 0 0121 5V19A2 2 0 0119 21H5A2 2 0 013 19V5A2 2 0 015 3H19M8.34 17V10H5.67V17H8.34M7 8.68A1.54 1.54 0 107 5.6A1.54 1.54 0 007 8.68M18.33 17V13.16C18.33 11.09 17.22 10 15.74 10C14.63 10 14.13 10.61 13.86 11.04V10H11.19V17H13.86V13.27C13.86 12.29 14.36 11.62 15.16 11.62C15.95 11.62 16.33 12.19 16.33 13.16V17H18.33Z"
+                    />
+                  </svg>
+                </a>
+
+                <!-- GitHub -->
                 <a
-                  class="btn"
                   href="https://github.com/Felipebcosta09"
                   target="_blank"
-                  rel="noopener"
-                  >GitHub</a
+                  class="social-icon"
+                  aria-label="GitHub"
                 >
-                <button class="btn ghost" id="copyEmail" type="button">
-                  📋 Copiar e-mail
-                </button>
-              </div>
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.48 2 2 6.58 2 12.25C2 16.78 4.87 20.64 8.84 22C9.34 22.09 9.5 21.78 9.5 21.5C9.5 21.24 9.5 20.5 9.5 19.69C6.73 20.31 6.14 18.34 6.14 18.34C5.68 17.15 5 16.84 5 16.84C4.09 16.19 5.07 16.2 5.07 16.2C6.07 16.27 6.61 17.25 6.61 17.25C7.5 18.83 8.97 18.38 9.54 18.12C9.63 17.47 9.88 17.02 10.16 16.77C7.95 16.51 5.62 15.63 5.62 11.75C5.62 10.64 6 9.74 6.65 9.05C6.55 8.79 6.2 7.67 6.75 6.2C6.75 6.2 7.58 5.93 9.5 7.26C10.29 7.04 11.15 6.93 12 6.93C12.85 6.93 13.71 7.04 14.5 7.26C16.42 5.93 17.25 6.2 17.25 6.2C17.8 7.67 17.45 8.79 17.35 9.05C18 9.74 18.38 10.64 18.38 11.75C18.38 15.64 16.04 16.51 13.82 16.76C14.17 17.07 14.5 17.67 14.5 18.59C14.5 19.87 14.5 20.97 14.5 21.5C14.5 21.78 14.66 22.1 15.17 22C19.13 20.64 22 16.78 22 12.25C22 6.58 17.52 2 12 2Z"
+                    />
+                  </svg>
+                </a>
 
-              <p class="tiny muted" id="copyMsg"></p>
+                <!-- Instagram -->
+                <a
+                  href="https://instagram.com/SEUUSUARIO"
+                  target="_blank"
+                  class="social-icon"
+                  aria-label="Instagram"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      fill="currentColor"
+                      d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7M12 7A5 5 0 0117 12A5 5 0 0112 17A5 5 0 017 12A5 5 0 0112 7M12 9A3 3 0 009 12A3 3 0 0012 15A3 3 0 0015 12A3 3 0 0012 9M18.5 6.5A1 1 0 0017.5 5.5A1 1 0 0016.5 6.5A1 1 0 0017.5 7.5A1 1 0 0018.5 6.5Z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
 
             <div class="contact-right">
               <div class="contact-mini">
-                <span class="muted" data-i18n="contact_email">E-mail</span>
-                <strong id="emailText">felipedevportugal@gmail.com</strong>
-              </div>
-              <div class="contact-mini">
-                <span class="muted" data-i18n="contact_location">Local</span>
-                <strong>Brasil / Portugal</strong>
+                <span class="muted">Contatos</span>
+
+                <div class="whatsapp-row">
+                  <a href="https://wa.me/5521966235987" target="_blank">
+                    🇧🇷 +55 (21) 96623-5987
+                    <span>🟢</span>
+                  </a>
+
+                  <a href="https://wa.me/351913768573" target="_blank">
+                    🇵🇹 +351 913 768 573
+                    <span>🟢</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -352,9 +446,7 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <span class="muted"
-          >© <span id="year"></span> Felipe. Portfólio interativo.</span
-        >
+        <span class="muted">© <span id="year"></span> Felipe. Portfólio .</span>
         <a class="muted" href="#home" data-i18n="back_top">Voltar ao topo ↑</a>
       </div>
     </footer>
