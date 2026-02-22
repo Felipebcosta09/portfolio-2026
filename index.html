@@ -60,44 +60,68 @@
 
   <body>
     <!-- NAV -->
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand" href="#home">Felipe<span>.</span></a>
+<header class="topbar">
+  <div class="container topbar-inner">
 
-        <nav class="nav">
-          <a href="#experiences" data-i18n="nav_experiences">Experiências</a>
-          <a href="#formacoes" data-i18n="nav_edu">Formações</a>
-          <a href="#projetos" data-i18n="nav_projects">Projetos</a>
-          <a href="#contato" data-i18n="nav_contact">Contato</a>
-        </nav>
+    <!-- HAMBURGUER ESQUERDA -->
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Abrir menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-        <div class="topbar-actions">
-          <button
-            class="lang-btn"
-            id="langToggle"
-            type="button"
-            aria-label="Alternar idioma"
-          >
-            <img
-              src="assets/pt-flag.png"
-              alt="Português"
-              class="flag flag-pt"
-            />
-            <img src="assets/us-flag.png" alt="English" class="flag flag-en" />
-          </button>
-          <button
-            class="btn ghost"
-            id="themeToggle"
-            type="button"
-            aria-label="Alternar tema"
-          >
-            🌙/☀️
-          </button>
-          <a class="btn primary" href="#projetos">Ver Projetos</a>
-        </div>
-      </div>
-    </header>
+    <a class="brand" href="#home">Felipe<span>.</span></a>
 
+    <!-- NAV DESKTOP -->
+    <nav class="nav">
+      <a href="#experiences" data-i18n="nav_experiences">Experiências</a>
+      <a href="#formacoes" data-i18n="nav_edu">Formações</a>
+      <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+      <a href="#contato" data-i18n="nav_contact">Contato</a>
+    </nav>
+
+    <div class="topbar-actions">
+      <button
+        class="lang-btn"
+        id="langToggle"
+        type="button"
+        aria-label="Alternar idioma"
+      >
+        <img src="assets/flags/br-flag.png" alt="Português" class="flag flag-br" />
+        <img src="assets/flags/us-flag.png" alt="English" class="flag flag-en" />
+      </button>
+
+      <button
+        class="btn ghost"
+        id="themeToggle"
+        type="button"
+        aria-label="Alternar tema"
+      >
+        🌙/☀️
+      </button>
+
+      <a class="btn primary desktop-only" href="#projetos">
+        Ver Projetos
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+
+<!-- NAV MOBILE -->
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#experiences" data-i18n="nav_experiences">Experiências</a>
+  <a href="#formacoes" data-i18n="nav_edu">Formações</a>
+  <a href="#projetos" data-i18n="nav_projects">Projetos</a>
+  <a href="#contato" data-i18n="nav_contact">Contato</a>
+</nav>
     <main>
       <!-- HERO -->
       <section id="home" class="hero">
@@ -138,7 +162,7 @@
             </div>
           </div>
 
-          <div class="hero-right">
+          <div class="hero-right reveal reveal-right">
             <div class="hero-card">
               <h3 data-i18n="hero_card_title">O que você encontra aqui</h3>
               <ul>
@@ -160,7 +184,7 @@
       <!-- Experiencias -->
       <section id="experiences" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal reveal-up">
             <h2 data-i18n="exp_title">Experiências</h2>
             <p data-i18n="exp_sub">
               Minha trajetória profissional na área de tecnologia.
@@ -240,18 +264,22 @@
       <!-- FORMAÇÕES (Split View) -->
       <section id="formacoes" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="experience-card reveal reveal-right">
             <h2 data-i18n="edu_title">Formações & Certificados</h2>
-            <p data-i18n="edu_sub">
-              Clique em um item para ver o certificado no painel.
+
+              <p data-i18n="edu_sub">
+  Certificados oficiais com validação, carga horária e informações completas.
+</p>
             </p>
           </div>
 
-          <div class="formacao-header">
+          <div class="formacao-header reveal reveal-up">
             <div class="title-area">
               <h3 data-i18n="edu_library">Biblioteca de Certificados</h3>
               <p class="muted" data-i18n="edu_library_sub">
-                Separado por categoria para ficar “cara de painel”.
+                <p class="muted" data-i18n="edu_library_sub">
+  Estruturado por categoria para navegação rápida e objetiva.
+</p>
               </p>
               <span class="counter-label" data-i18n="edu_counter"
                 >certificados</span
@@ -265,35 +293,39 @@
               </div>
             </div>
           </div>
+<nav class="tabs reveal reveal-up">
+  <button
+    class="tab"
+    data-category="graduacao"
+    data-i18n="tab_grad"
+  >
+    🎓 Graduação
+  </button>
 
-          <nav class="tabs" aria-label="Categorias de formação">
-            <button
-              class="tab active"
-              data-category="graduacao"
-              data-i18n="tab_grad"
-            >
-              🎓 Graduação
-            </button>
-            <button class="tab" data-category="pos" data-i18n="tab_pos">
-              📜 Pós
-            </button>
-            <button class="tab" data-category="cursos" data-i18n="tab_courses">
-              🤖 Cursos Livres
-            </button>
-            <button class="tab" data-category="all" data-i18n="tab_all">
-              ✨ Todos
-            </button>
-          </nav>
+  <button class="tab" data-category="pos" data-i18n="tab_pos">
+    📜 Pós
+  </button>
 
+  <button class="tab" data-category="cursos" data-i18n="tab_courses">
+    🤖 Cursos Livres
+  </button>
+
+  <button
+    class="tab active"
+    data-category="all"
+    data-i18n="tab_all"
+  >
+    ✨ Todos
+  </button>
+</nav>
           <div class="split-view">
             <aside
-              class="courses-list"
+              <aside class="courses-list reveal reveal-left"
               id="coursesList"
               aria-label="Lista de cursos"
             ></aside>
 
-            <section
-              class="preview"
+            <section class="preview reveal reveal-right"
               id="preview"
               aria-label="Visualização do certificado"
             >
@@ -311,14 +343,14 @@
       <!-- PROJETOS -->
       <section id="projetos" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal reveal-up">
             <h2 data-i18n="projects_title">Projetos</h2>
             <p data-i18n="projects_sub">
               Cards com utilidade + tecnologias. Clique para ver detalhes.
             </p>
           </div>
 
-          <div class="projects-toolbar">
+          <div class="projects-toolbar reveal reveal-up">
             <input
               id="projectSearch"
               class="input"
@@ -343,7 +375,7 @@
       <!-- CONTATO -->
       <section id="contato" class="section">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head reveal reveal-up">
             <h2 data-i18n="contact_title">Contato</h2>
             <p data-i18n="contact_sub">Vamos nos conectar.</p>
           </div>

@@ -71,7 +71,7 @@ const tabs = $$(".tab");
 const certCounter = $("#certCounter");
 
 let allFormacoes = [];
-let currentCategory = "graduacao";
+let currentCategory = "all";
 
 function setActiveCourse(element) {
   $$(".course-item").forEach((i) => i.classList.remove("active"));
@@ -448,9 +448,11 @@ const i18n = {
 
     // Formações
     edu_title: "Formações & Certificados",
-    edu_sub: "Clique em um item para ver o certificado no painel.",
+    edu_sub:
+      "Visualize certificados oficiais, carga horária e detalhes de cada formação.",
+    edu_library_sub:
+      "Estruturado por categoria para navegação rápida e objetiva.",
     edu_library: "Biblioteca de Certificados",
-    edu_library_sub: "Separado por categoria para ficar “cara de painel”.",
     edu_counter: "certificados",
     tab_grad: "🎓 Graduação",
     tab_pos: "📜 Pós",
@@ -467,7 +469,8 @@ const i18n = {
 
     // Contato
     contact_title: "Contato",
-    contact_sub: "Links e um CTA final simples.",
+    contact_sub:
+      "Disponível para oportunidades, colaborações e novos projetos.",
     contact_lets: "Vamos conversar",
     contact_hint: "Deixe seus links aqui (LinkedIn, GitHub, e-mail, WhatsApp).",
     contact_email: "E-mail",
@@ -520,9 +523,12 @@ const i18n = {
 
     // Education
     edu_title: "Education & Certificates",
-    edu_sub: "Click an item to preview the certificate.",
+    edu_sub:
+      "Browse official certificates, workload details and complete information.",
+    edu_library_sub:
+      "Structured by category for fast and objective navigation.",
     edu_library: "Certificate Library",
-    edu_library_sub: "Grouped by category for a clean dashboard feel.",
+
     edu_counter: "certificates",
     tab_grad: "🎓 Degree",
     tab_pos: "📜 Postgraduate",
@@ -538,7 +544,8 @@ const i18n = {
 
     // Contact
     contact_title: "Contact",
-    contact_sub: "Links and a simple final CTA.",
+    contact_sub:
+      "Available for opportunities, collaborations and new projects.",
     contact_lets: "Let’s talk",
     contact_hint: "Put your links here (LinkedIn, GitHub, email, WhatsApp).",
     contact_email: "Email",
@@ -579,3 +586,58 @@ langToggle?.addEventListener("click", () => {
   const next = current === "pt" ? "en" : "pt";
   applyLanguage(next);
 });
+
+const menuToggle = document.getElementById("menuToggle");
+const mobileNav = document.getElementById("mobileNav");
+
+function toggleMenu() {
+  mobileNav.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+}
+
+function closeMenu() {
+  mobileNav.classList.remove("active");
+  menuToggle.classList.remove("active");
+}
+
+menuToggle?.addEventListener("click", toggleMenu);
+
+/* Fecha ao clicar em link */
+document.querySelectorAll(".mobile-nav a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+/* 🔥 Fecha ao clicar no fundo (fora dos links) */
+mobileNav?.addEventListener("click", (e) => {
+  if (e.target === mobileNav) {
+    closeMenu();
+  }
+});
+/* ========================== */
+/* GLOBAL SCROLL ANIMATION */
+/* ========================== */
+
+function initReveal() {
+  const elements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          entry.target.classList.remove("show");
+          // Remove para poder animar novamente ao subir/descer
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -50px 0px",
+    },
+  );
+
+  elements.forEach((el) => observer.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", initReveal);

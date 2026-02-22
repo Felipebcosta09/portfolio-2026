@@ -2,41 +2,88 @@
   {
     "category": "graduacao",
     "icon": "🎓",
-    "titulo": "Graduação em (Seu curso aqui)",
-    "instituicao": "(Sua faculdade)",
-    "carga": "xxxxh",
-    "data": "AAAA",
-    "type": "pdf",
-    "arquivo": "assets/certificados/graduacao.pdf"
-  },
-  {
-    "category": "pos",
-    "icon": "📜",
-    "titulo": "Pós-graduação em Cloud & DevOps",
-    "instituicao": "UNINTER",
-    "carga": "360h",
+    "titulo": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "2030h",
     "data": "2025",
     "type": "pdf",
-    "arquivo": "assets/certificados/pos-devops.pdf"
+    "arquivo": "assets/certificados/ads.pdf"
   },
-  {
-    "category": "pos",
-    "icon": "🤖",
-    "titulo": "Pós-graduação em Ciência de Dados e IA",
-    "instituicao": "UNINTER",
-    "carga": "360h",
-    "data": "2025",
-    "type": "pdf",
-    "arquivo": "assets/certificados/pos-dados-ia.pdf"
-  },
+
   {
     "category": "cursos",
-    "icon": "☁️",
-    "titulo": "Curso AWS (exemplo)",
-    "instituicao": "Plataforma X",
-    "carga": "xxh",
-    "data": "AAAA",
-    "type": "image",
-    "arquivo": "assets/certificados/aws.jpg"
+    "icon": "⚙️",
+    "titulo": "Gestão e Qualidade de Software",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "160h",
+    "data": "2025",
+    "type": "pdf",
+    "arquivo": "assets/certificados/gestao-software.pdf"
+  },
+
+  {
+    "category": "cursos",
+    "icon": "📐",
+    "titulo": "Modelagem de Software",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "160h",
+    "data": "2024",
+    "type": "pdf",
+    "arquivo": "assets/certificados/modelagem-software.pdf"
+  },
+
+  {
+    "category": "cursos",
+    "icon": "🧩",
+    "titulo": "Modelos, Métodos e Técnicas da Engenharia de Software",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "160h",
+    "data": "2023",
+    "type": "pdf",
+    "arquivo": "assets/certificados/engenharia-software.pdf"
+  },
+
+  {
+    "category": "cursos",
+    "icon": "💻",
+    "titulo": "Programação de Soluções Computacionais",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "160h",
+    "data": "2024",
+    "type": "pdf",
+    "arquivo": "assets/certificados/programacao-solucoes.pdf"
+  },
+
+  {
+    "category": "cursos",
+    "icon": "🔐",
+    "titulo": "Sistemas Computacionais e Segurança",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "160h",
+    "data": "2023",
+    "type": "pdf",
+    "arquivo": "assets/certificados/sistemas-seguranca.pdf"
+  },
+
+  {
+    "category": "cursos",
+    "icon": "🌐",
+    "titulo": "Sistemas Distribuídos e Mobile",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "160h",
+    "data": "2024",
+    "type": "pdf",
+    "arquivo": "assets/certificados/sistemas-distribuidos.pdf"
+  },
+
+  {
+    "category": "cursos",
+    "icon": "🎨",
+    "titulo": "Usabilidade, Desenvolvimento Web, Mobile e Jogos",
+    "instituicao": "Centro Universitário IBMR",
+    "carga": "160h",
+    "data": "2024",
+    "type": "pdf",
+    "arquivo": "assets/certificados/usabilidade-web.pdf"
   }
 ]
